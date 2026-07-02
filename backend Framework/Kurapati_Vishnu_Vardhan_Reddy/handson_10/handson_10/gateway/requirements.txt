@@ -1,0 +1,10 @@
+# Hands-On 10 - Microservices Architecture
+
+## Service Decomposition
+
+| Service Name | Responsibility | Endpoints it Owns | Database it Owns |
+|--------------|---------------|-------------------|------------------|
+| Course Service | Manage courses and departments | /api/courses | course.db |
+| Student Service | Manage students and enrollments | /api/students, /api/students/{id}/enroll | student.db |
+| Auth Service | User registration, login and token validation | /api/auth/register, /api/auth/login | auth.db |
+| Notification Service | Send enrollment confirmation emails | Internal service | notification.db |
