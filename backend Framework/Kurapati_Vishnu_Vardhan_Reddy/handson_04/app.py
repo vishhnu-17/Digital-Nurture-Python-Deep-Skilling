@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,jsonify
 from config import Config
 from courses.routes import courses_bp
 def create_app():
@@ -9,9 +9,9 @@ def create_app():
     return app
 
 app= create_app()
-# @app.errorhandler(404)
-# def not_found(error):
-#     return jsonify({"status":"error","message":"resource not found"}),404
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({"status":"error","message":"resource not found"}),404
 
 @app.errorhandler(500)
 def internal_server(error):
