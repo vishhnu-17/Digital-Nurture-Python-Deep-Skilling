@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\admin\Desktop\Cognizant deepskill\DeepSkill Solutions\backend Framework\Kurapati_Vishnu_Vardhan_Reddy\handson_06\.handson_06
+set VIRTUAL_ENV=C:\Users\admin\Desktop\Cognizant deepskill\DeepSkill Solutions\backend Framework\Kurapati_Vishnu_Vardhan_Reddy\handson_006\.handson_06
 
 if not defined PROMPT set PROMPT=$P$G
 
