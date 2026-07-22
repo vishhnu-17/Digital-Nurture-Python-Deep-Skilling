@@ -1,4 +1,161 @@
 // ======================================================
+// HANDS-ON 5 - TASK 1: Create Collection & Insert Documents
+// ======================================================
+
+// Step 60
+use college_nosql
+
+
+// Step 61
+db.createCollection("feedback")
+
+
+// Step 62
+db.feedback.insertMany([
+  {
+    student_id: 1,
+    course_code: "CS101",
+    semester: "2022-ODD",
+    rating: 5,
+    comments: "Excellent teaching. Would recommend.",
+    tags: ["challenging", "well-structured", "good-examples"],
+    submitted_at: ISODate("2022-11-30T10:15:00Z"),
+    attachments: [
+      {
+        filename: "notes.pdf",
+        size_kb: 240
+      }
+    ]
+  },
+  {
+    student_id: 2,
+    course_code: "CS101",
+    semester: "2022-ODD",
+    rating: 4,
+    comments: "Very informative.",
+    tags: ["challenging", "interesting"],
+    submitted_at: ISODate("2022-11-29T09:00:00Z"),
+    attachments: [
+      {
+        filename: "assignment.pdf",
+        size_kb: 180
+      }
+    ]
+  },
+  {
+    student_id: 3,
+    course_code: "CS101",
+    semester: "2022-EVEN",
+    rating: 3,
+    comments: "Good but fast paced.",
+    tags: ["fast", "challenging"],
+    submitted_at: ISODate("2022-05-20T10:00:00Z")
+  },
+  {
+    student_id: 4,
+    course_code: "CS102",
+    semester: "2022-ODD",
+    rating: 5,
+    comments: "Loved the practical sessions.",
+    tags: ["practical", "well-structured"],
+    submitted_at: ISODate("2022-11-15T11:30:00Z"),
+    attachments: [
+      {
+        filename: "lab.pdf",
+        size_kb: 320
+      }
+    ]
+  },
+  {
+    student_id: 5,
+    course_code: "CS102",
+    semester: "2021-EVEN",
+    rating: 2,
+    comments: "Needs improvement.",
+    tags: ["difficult"],
+    submitted_at: ISODate("2021-12-10T08:00:00Z")
+  },
+  {
+    student_id: 6,
+    course_code: "EC101",
+    semester: "2022-ODD",
+    rating: 4,
+    comments: "Clear explanations.",
+    tags: ["interesting"],
+    submitted_at: ISODate("2022-11-18T14:00:00Z"),
+    attachments: [
+      {
+        filename: "circuit.pdf",
+        size_kb: 210
+      }
+    ]
+  },
+  {
+    student_id: 7,
+    course_code: "ME101",
+    semester: "2022-ODD",
+    rating: 1,
+    comments: "Very difficult.",
+    tags: ["hard"],
+    submitted_at: ISODate("2022-11-12T13:20:00Z")
+  },
+  {
+    student_id: 8,
+    course_code: "CS103",
+    semester: "2022-EVEN",
+    rating: 5,
+    comments: "Excellent content.",
+    tags: ["oop", "coding"],
+    submitted_at: ISODate("2022-06-10T09:40:00Z"),
+    attachments: [
+      {
+        filename: "oop.pdf",
+        size_kb: 270
+      }
+    ]
+  },
+  {
+    student_id: 9,
+    course_code: "EC101",
+    semester: "2022-ODD",
+    rating: 3,
+    comments: "Average experience.",
+    tags: ["average"],
+    submitted_at: ISODate("2022-11-05T15:00:00Z")
+  },
+  {
+    student_id: 10,
+    course_code: "CS102",
+    semester: "2022-ODD",
+    rating: 5,
+    comments: "Fantastic course.",
+    tags: ["recommended", "well-structured"],
+    submitted_at: ISODate("2022-11-28T12:00:00Z"),
+    attachments: [
+      {
+        filename: "summary.pdf",
+        size_kb: 150
+      }
+    ]
+  }
+]);
+
+
+// Step 63
+db.feedback.insertOne({
+  student_id: 11,
+  course_code: "CS104",
+  semester: "2022-ODD",
+  rating: 4,
+  comments: "Good course overall.",
+  tags: ["informative", "interactive"],
+  submitted_at: ISODate("2022-12-01T10:00:00Z")
+});
+
+
+// Step 64
+db.feedback.countDocuments();
+// ======================================================
 // HANDS-ON 5 - TASK 2: CRUD Operations
 // ======================================================
 
@@ -20,7 +177,7 @@ db.feedback.find(
     {},
     {
         student_id: 1,
-        course_code: 1,
+        course_code: 0,
         rating: 1,
         _id: 0
     }
